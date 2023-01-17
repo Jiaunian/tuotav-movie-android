@@ -1,0 +1,21 @@
+apply from: "${rootDir.getAbsolutePath()}/scripts/building/library.gradle"
+
+android {
+    namespace 'com.toutav.movie.core'
+
+    defaultConfig {}
+
+    buildFeatures {
+        // enable viewbinding
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    api(project(":tuotav:tuotavcore"))
+    
+    api('androidx.appcompat:appcompat:1.5.1')
+    // ViewBinding 反射创建
+    implementation('com.github.DylanCaiCoding.ViewBindingKTX:viewbinding-nonreflection-ktx:2.1.0')
+}

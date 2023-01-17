@@ -1,0 +1,27 @@
+apply from: "${rootDir.getAbsolutePath()}/scripts/building/library.gradle"
+
+
+android {
+    namespace 'com.toutav.movie.mod.auth'
+
+
+    defaultConfig {
+        // 如果模块是App时, 需要设置 ApplicationId
+        if (isModuleRunApp.toBoolean()){
+            applicationId 'com.toutav.movie.mod.auth'
+        }
+    }
+}
+
+dependencies {
+    // mod route require.
+    kapt "cn.therouter:apt:1.1.2"
+
+    // mod basic configuration
+    implementation(project(":bizroute"))
+    implementation(project(":bizmod:bizmodapi"))
+    implementation(project(":bizmod:bizmodular"))
+
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+}

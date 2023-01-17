@@ -1,0 +1,16 @@
+apply from: "${rootDir.getAbsolutePath()}/scripts/building/library.gradle"
+
+android {
+    namespace 'com.toutav.movie.modular'
+
+    defaultConfig {}
+}
+
+dependencies {
+
+    // mod route require.
+    kapt "cn.therouter:apt:1.1.2"
+
+    api(project(":bizcore"))
+    implementation(project(":bizmod:bizmodapi"))
+}

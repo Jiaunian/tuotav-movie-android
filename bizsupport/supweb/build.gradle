@@ -1,0 +1,12 @@
+apply from: "${rootDir.getAbsolutePath()}/scripts/building/library.gradle"
+
+android {
+    namespace 'com.toutav.movie.sup.web'
+
+    defaultConfig {}
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+}

@@ -1,0 +1,31 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "tuotav-movie-android"
+include ':movieapp'
+include ':tuotav:tuotavcore'
+include ':tuotav:tuotavnet'
+include ':tuotav:tuotavui'
+include ':bizcore'
+include ':bizmod:bizmodapi'
+include ':bizsupport:supimage'
+include ':bizsupport:supnetwork'
+include ':bizsupport:supdatabase'
+include ':bizsupport:supweb'
+include ':bizmod:bizmodular'
+include ':bizsupport:supcache'
+include ':bizmod:moduser'
+include ':bizroute'
+include ':bizmod:modmain'
+include ':bizmod:modauth'

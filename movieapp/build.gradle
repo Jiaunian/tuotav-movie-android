@@ -1,0 +1,27 @@
+apply from: "${rootDir.getAbsolutePath()}/scripts/building/application.gradle"
+// app module 中引入
+apply plugin: 'therouter'
+
+android {
+    namespace 'com.toutav.movie'
+
+    defaultConfig {
+        applicationId "com.toutav.movie"
+        versionCode APP_VERSION_CODE as int
+        versionName APP_VERSION_NAME
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    // 组件不是以App的形式运行时引入相关组件
+    if (isModuleRunApp.toBoolean()){
+        return;
+    }
+    // component mods.
+    implementation(project(":bizmod:moduser"))
+    implementation(project(":bizmod:modmain"))
+}

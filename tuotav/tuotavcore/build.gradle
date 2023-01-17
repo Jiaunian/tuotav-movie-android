@@ -1,0 +1,14 @@
+apply from: "${rootDir.getAbsolutePath()}/scripts/building/library.gradle"
+
+android {
+    namespace 'com.tuotav.android.core'
+    defaultConfig {}
+}
+
+dependencies {
+    api('androidx.core:core-ktx:1.7.0')
+    api('androidx.appcompat:appcompat:1.5.1')
+    api('com.google.android.material:material:1.7.0')
+    api('com.blankj:utilcodex:1.31.1')
+    api("com.google.guava:guava:31.1-android")
+}
